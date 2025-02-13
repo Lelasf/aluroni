@@ -1,0 +1,29 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "@typescript-eslint"],
+  "rules": {
+    "quotes": ["off"], // Desabilita a regra que força aspas simples ou duplas
+    "semi": ["error", "always"], // Exige ponto e vírgula no final das instruções
+    "indent": ["off"], // Define o estilo de indentação (2 espaços)
+    "react/react-in-jsx-scope": "off", // Desabilita a exigência de importar o React em componentes
+    "react/jsx-uses-react": "off", // Desabilita a exigência de usar `React` em JSX
+    "react/prop-types": "off", // Desabilita a exigência de `prop-types` em projetos TS
+    "no-console": "warn" // Alerta sobre o uso de console.log
+  }
+}
