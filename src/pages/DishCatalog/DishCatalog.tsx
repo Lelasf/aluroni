@@ -1,20 +1,18 @@
-import styles from "./Menu.module.scss";
-import { ReactComponent as Logo } from "assets/logo.svg";
+import styles from "./DishCatalog.module.scss";
 import { useState } from "react";
 import Filters from "./Filters/Filters";
 import Items from "./Items/Items";
 import SearchBar from "./SearchBar/SearchBar";
 import Sorter from "./Sorter/Sorter";
 
-export default function Menu() {
+
+export default function DishCatalog() {
   const [search, setSearch] = useState("");
   const [filter, setFilter] = useState<number | null>(null);
   const [sorter, setSorter] = useState("");
   return (
     <main>
-      <nav className={styles.menu}>
-        <Logo />
-      </nav>
+     
       <header className={styles.header}>
         <div className={styles.header__text}>A casa do codigo e da massa</div>
       </header>

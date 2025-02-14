@@ -1,0 +1,48 @@
+@import "styles/variables";
+@import "styles/breakpoints";
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  position: fixed; // Fixa o menu
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background-color: $light-grey;
+  padding: 10px 20px;
+  width: 50%;
+
+  border-bottom: 1px solid #cfcbcb4a;
+  box-shadow: 0px 0px 12px rgb(0, 0, 0, 0.15);
+
+  @media (max-width: $desktop_xsm) {
+    padding: 10px;
+    flex-wrap: nowrap;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
+    gap: 3px;
+    margin: 0;
+    width: 100%;
+  }
+
+  &__list {
+    display: flex;
+    align-items: center;
+    flex-grow: 1; // Ocupa espaço disponível
+    padding: 0;
+    justify-content: flex-end;
+  }
+
+  &__logo {
+    flex-shrink: 0; // Impede que reduza demais
+    order: -1;
+
+    @media (max-width: $desktop_xsm) {
+      max-width: 120px; // Tamanho menor para mobile
+    }
+  }
+}

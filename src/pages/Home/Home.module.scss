@@ -1,17 +1,26 @@
+@import "styles/breakpoints";
 @import "styles/variables";
 
 .title {
   color: $dark;
   font-size: 3rem;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.section {
+  padding: 5rem 0;
 }
 
 .recommended {
   border-radius: 2px;
   display: flex;
   flex-wrap: wrap;
-  gap: 30px;
-  justify-content: space-between;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
 }
 
 .recommendedItem {
