@@ -7,8 +7,6 @@ export default function NotFound() {
 
   return (
     <div className={styles.container}>
-      <NotFoundImage style={{ width: "500px" }} />
-
       <div className={styles.back}>
         <button
           onClick={() => {
@@ -18,6 +16,8 @@ export default function NotFound() {
           {"< Voltar"}
         </button>
       </div>
+
+      <NotFoundImage style={{ width: "500px" }} />
     </div>
   );
 }

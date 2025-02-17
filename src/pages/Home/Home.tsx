@@ -1,6 +1,8 @@
-import catalog from "../../data/menu.json";
+import { Catalog } from "types/dishes";
+import catalog from "data/menu.json";
 import styles from "./Home.module.scss";
 import ourHouse from "../../assets/nossa_casa.png";
+import { useNavigate } from "react-router-dom";
 
 export default function Home() {
   let recommendedDishes = [...catalog];
@@ -8,6 +10,12 @@ export default function Home() {
   recommendedDishes = recommendedDishes
     .sort(() => 0.5 - Math.random())
     .splice(0, 3);
+
+  const navigate = useNavigate();
+
+  function redirectToDetails(dish: Catalog[0]) {
+    navigate(`/prato/${dish.id}`, { state: { dish }, replace: true });
+  }
 
   return (
     <section>
@@ -18,7 +26,12 @@ export default function Home() {
             <div className={styles.recommendedItem__image}>
               <img src={item.photo} alt={item.title} />
             </div>
-            <button className={styles.recommendedItem__button}>Ver Mais</button>
+            <button
+              onClick={() => redirectToDetails(item)}
+              className={styles.recommendedItem__button}
+            >
+              Ver Mais
+            </button>
           </div>
         ))}
       </div>

@@ -1,4 +1,5 @@
-import menu from "../../../data/menu.json";
+import { Catalog } from "types/dishes";
+import catalog from "data/menu.json";
 import Item from "./Item/Item";
 import styles from "./Items.module.scss";
 import { useState, useEffect } from "react";
@@ -10,7 +11,7 @@ interface Props {
 }
 
 export default function Items(props: Props) {
-  const [list, setList] = useState(menu);
+  const [list, setList] = useState(catalog);
   const { search, filter, sorter } = props;
 
   function isSearchMath(title: string) {
@@ -23,7 +24,7 @@ export default function Items(props: Props) {
     return true;
   }
 
-  function sortList(newList: typeof menu) {
+  function sortList(newList: Catalog) {
     switch (sorter) {
       case "portion":
         return newList.sort((a, b) => (a.size > b.size ? 1 : -1));
@@ -37,7 +38,7 @@ export default function Items(props: Props) {
   }
 
   useEffect(() => {
-    const newList = menu.filter(
+    const newList = catalog.filter(
       (item) => isSearchMath(item.title) && isFilterMatch(item.category.id)
     );
     setList(sortList(newList));

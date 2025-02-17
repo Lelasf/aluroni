@@ -1,67 +1,57 @@
 @import "styles/variables";
 @import "styles/breakpoints";
 
+.back {
+  background-color: transparent;
+  border: none;
+  color: $red;
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 8rem 0 0 0;
+
+  @media (max-width: $desktop_xsm) {
+    padding: 8rem 0 0 2rem;
+    text-align: left;
+  }
+}
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  text-align: center;
+}
+.title {
+  font-size: 3rem;
+}
+.image {
+  width: 600px;
+  img {
+    border-radius: 8px;
+    width: 100%;
+  }
+}
+.content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  &__description {
+    color: $darkest-grey;
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  &____details {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 $pastas: #d73b3b;
 $meats: #30201e;
 $combos: #e6c864;
-$vegan: #80aa40;
-
-.item {
-  display: flex;
-  flex-wrap: wrap;
-  width: 90%;
-  cursor: pointer;
-  transition: 0.2s ease-in;
-  align-items: center;
-  border-radius: 10px;
-  padding: 20px;
-
-  &:hover {
-    background-color: $grey;
-  }
-
-  @media (max-width: $desktop_xsm) {
-    padding: 10px;
-  }
-
-  &__image {
-    min-width: 240px;
-    @media (max-width: $desktop_xsm) {
-      width: 100%;
-    }
-    img {
-      border-radius: 8px;
-      width: 100%;
-    }
-  }
-  &__description {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    padding: 0 20px;
-    @media (max-width: $desktop_xsm) {
-      flex-direction: row;
-      margin-top: 20px;
-      padding: 0;
-    }
-  }
-  &__title {
-    h2 {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    p {
-      color: $dark-grey;
-      font-size: 1.3rem;
-      font-weight: 600;
-      max-width: 600px;
-      margin-bottom: 20px;
-    }
-  }
-}
+$vegans: #80aa40;
 
 .tags {
   display: flex;
@@ -75,10 +65,9 @@ $vegan: #80aa40;
   @media (max-width: $mobile) {
     justify-content: flex-start;
   }
-  > div {
+  div {
     margin: 10px;
   }
-
   &__type {
     align-items: center;
     border-radius: 2px;
@@ -99,10 +88,10 @@ $vegan: #80aa40;
       background-color: $combos;
     }
     &__vegan {
-      background-color: $vegan;
+      background-color: $vegans;
     }
   }
-  &__portion,
+  &__porcao,
   &__peopleQty,
   &__price {
     align-items: center;
