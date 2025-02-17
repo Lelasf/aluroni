@@ -1,7 +1,14 @@
 @import "styles/variables";
 @import "styles/breakpoints";
 
-.menu {
+.container {
+  align-items: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+
   padding: 50px $padding-horizontal;
   @media (max-width: $desktop_xsm) {
     padding: 50px $padding-horizontal-mobile;
@@ -12,17 +19,18 @@
   @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
     padding: 50px $padding-horizontal-md;
   }
-  &__title {
-    color: $dark;
-    font-size: 3rem;
-    margin-bottom: 30px;
-  }
-  &__filters {
-    align-items: center;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    margin-bottom: 30px;
-    width: 100%;
+}
+
+.back {
+  display: flex;
+  justify-content: flex-start;
+  width: 100%;
+  button {
+    background-color: transparent;
+    border: none;
+    color: $red;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-weight: bold;
   }
 }

@@ -1,0 +1,46 @@
+@import "styles/breakpoints";
+@import "styles/variables";
+
+.title {
+  color: $dark;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  text-align: center;
+  width: 100%;
+}
+
+.aboutUs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 50px;
+  padding: 50px $padding-horizontal;
+  @media (max-width: $desktop_xsm) {
+    overflow: hidden;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  @media (min-width: $desktop_xsm) and (max-width: $desktop_sm) {
+    padding: 50px $padding-horizontal-sm;
+  }
+  @media (min-width: $desktop_sm) and (max-width: $desktop_md) {
+    padding: 50px $padding-horizontal-md;
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+
+    @media (max-width: $desktop_xsm) {
+      flex: 1;
+      min-width: 400px;
+    }
+    p {
+      font-family: "Josefin Sans", sans-serif;
+    }
+  }
+}
