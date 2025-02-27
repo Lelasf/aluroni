@@ -1,6 +1,6 @@
 # alfood
 
-Projeto feito com base no curso de React: gerenciando estado com Recoil da formação alura "Gerencie aplicações React com Typescript"
+Projeto feito com base no curso de React: conhecendo a biblioteca React Router da formação alura "Gerencie aplicações React com Typescript"
 
 # Getting Started with Create React App
 
