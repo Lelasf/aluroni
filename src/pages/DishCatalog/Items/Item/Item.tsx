@@ -1,12 +1,12 @@
 import { Dish } from "types/dishes";
 import styles from "./Item.module.scss";
-import classNames from "classnames";
 import { useNavigate } from "react-router-dom";
+import { lazy, memo } from "react";
 
-export default function Item(props: Dish) {
-  const { id, title, description, photo, category, size, serving, price } =
-    props;
+const DishTags = lazy(() => import("components/DishTags/DishTags"));
 
+function Item(props: Dish) {
+  const { id, title, description, photo } = props;
   const navigate = useNavigate();
 
   return (
@@ -19,22 +19,10 @@ export default function Item(props: Dish) {
           <h2> {title} </h2>
           <p> {description} </p>
         </div>
-        <div className={styles.tags}>
-          <div
-            className={classNames({
-              [styles.tags__type]: true,
-              [styles[`tags__type${category.label.toLowerCase()}`]]: true,
-            })}
-          >
-            {category.label}
-          </div>
-          <div className={styles.tags__portion}>{size}g</div>
-          <div className={styles.tags__peopleQty}>
-            Serve {serving} pessoa{serving === 1 ? "" : "s"}
-          </div>
-          <div className={styles.tags__price}>R$ {price.toFixed(2)}</div>
-        </div>
+        <DishTags {...props} />
       </div>
     </div>
   );
 }
+
+export default memo(Item);

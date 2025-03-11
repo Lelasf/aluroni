@@ -14,7 +14,7 @@ export default function Items(props: Props) {
   const [list, setList] = useState(catalog);
   const { search, filter, sorter } = props;
 
-  function isSearchMath(title: string) {
+  function isSearchMatch(title: string) {
     const regex = new RegExp(search, "i");
     return regex.test(title);
   }
@@ -39,7 +39,7 @@ export default function Items(props: Props) {
 
   useEffect(() => {
     const newList = catalog.filter(
-      (item) => isSearchMath(item.title) && isFilterMatch(item.category.id)
+      (item) => isSearchMatch(item.title) && isFilterMatch(item.category.id)
     );
     setList(sortList(newList));
   }, [search, filter, sorter]);
